@@ -14,7 +14,9 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api', apiRoutes);
-
+app.get("/",(req,res)=>{
+  res.send("server is running successfully")
+})
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(process.env.MONGODB_URI, { serverSelectionTimeoutMS: 10000 })
